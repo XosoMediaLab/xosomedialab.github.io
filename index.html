@@ -4,8 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>XosoMedia Lab</title>
-<meta name="description" content="XosoMedia Lab: pequeño estudio independiente de apps y juegos para móvil. Creadores de Azulejos del Pueblo.">
+<meta name="description" content="XosoMedia Lab: pequeño estudio independiente de apps, juegos y webs útiles: Azulejos del Pueblo, calendariohabil.com, fichasadaptadas.com y Test Oposiciones.">
 <link rel="icon" href="azulejos-icono.png">
+<link rel="canonical" href="https://xosomedialab.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="XosoMedia Lab">
+<meta property="og:title" content="XosoMedia Lab: apps, juegos y webs útiles">
+<meta property="og:description" content="Pequeño estudio independiente de España: Azulejos del Pueblo, calendariohabil.com, fichasadaptadas.com y Test Oposiciones.">
+<meta property="og:url" content="https://xosomedialab.github.io/">
+<meta property="og:image" content="https://xosomedialab.github.io/azulejos-destacado.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"XosoMedia Lab","url":"https://xosomedialab.github.io/","logo":"https://xosomedialab.github.io/azulejos-icono.png","email":"xosomedialab@gmail.com",
+ "sameAs":["https://calendariohabil.com/","https://fichasadaptadas.com/"],
+ "owns":[{"@type":"MobileApplication","name":"Azulejos del Pueblo","operatingSystem":"Android","applicationCategory":"GameApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},
+         {"@type":"WebSite","name":"Calendario Hábil","url":"https://calendariohabil.com/"},
+         {"@type":"WebSite","name":"Fichas Adaptadas","url":"https://fichasadaptadas.com/"}]}
+</script>
 <style>
   /* Layout: one-page studio site — header, featured game card with art, footer with contact and privacy. */
   :root { --bg: #FBF8F1; --card: #FFFFFF; --ink: #1D2A44; --soft: #5B6680; --accent: #1E4FB8; --sun: #F2B33D; --line: #E8E1D2; color-scheme: light; }
@@ -29,16 +44,24 @@
   .links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 4px; }
   a { color: var(--accent); }
   footer { border-top: 1px solid var(--line); padding: 20px 0 40px; color: var(--soft); font-size: .95rem; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+  .projs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 0 0 40px; }
+  .proj { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+  .proj h2 { margin: 0; font: 800 1.2rem/1.25 Georgia, serif; }
+  .proj p { margin: 0; color: var(--soft); flex: 1; }
+  .kind { font: 700 .72rem/1.4 system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
+  .badge.soon { background: var(--line); color: var(--ink); align-self: flex-start; }
+  .go { font-weight: 700; text-decoration: none; }
+  .go:hover { text-decoration: underline; }
   @media (max-width: 480px) { .gbody { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header><div class="logo">XosoMedia Lab<small>Apps y juegos para móvil</small></div></header>
+  <header><div class="logo">XosoMedia Lab<small>Apps, juegos y webs</small></div></header>
 
   <section class="hero">
-    <h1>Apps y juegos tranquilos, hechos con cariño</h1>
-    <p class="lede">XosoMedia Lab es un pequeño estudio independiente de España. Hacemos aplicaciones y juegos para móvil sencillos, cuidados y que se pueden disfrutar sin pagar.</p>
+    <h1>Apps, juegos y webs útiles, hechos con cariño</h1>
+    <p class="lede">XosoMedia Lab es un pequeño estudio independiente de España. Hacemos juegos, aplicaciones y webs sencillos, cuidados y que se pueden usar sin pagar.</p>
   </section>
 
   <article class="game" id="azulejos">
@@ -47,12 +70,33 @@
       <img src="azulejos-icono.png" alt="" width="72" height="72">
       <div>
         <h2>Azulejos del Pueblo</h2>
-        <p>Ordena azulejos de estilo artesanal hasta que cada estante tenga un solo dibujo y usa las monedas para restaurar pueblos del Mediterráneo: España, Italia, Grecia y Turquía. Disponible en 12 idiomas.</p>
+        <p>Ordena azulejos de estilo artesanal hasta que cada estante tenga un solo dibujo y usa las monedas para restaurar pueblos del Mediterráneo: España, Italia, Grecia y Turquía. Disponible en 13 idiomas.</p>
         <span class="badge">Próximamente en Google Play</span>
         <div class="links"><a href="politica-privacidad.html">Política de privacidad</a></div>
       </div>
     </div>
   </article>
+
+  <section class="projs" aria-label="Otros proyectos">
+    <article class="proj" id="calendariohabil">
+      <span class="kind">Web</span>
+      <h2>calendariohabil.com</h2>
+      <p>Festivos nacionales, autonómicos y locales de más de 4.000 municipios, días hábiles, plazos y calendarios escolares de España, con calculadoras laborales de México, Colombia y Perú. Cada fecha, con su boletín oficial.</p>
+      <a class="go" href="https://calendariohabil.com/">Visitar calendariohabil.com →</a>
+    </article>
+    <article class="proj" id="fichasadaptadas">
+      <span class="kind">Web para docentes</span>
+      <h2>fichasadaptadas.com</h2>
+      <p>Generador de fichas imprimibles para Primaria: el docente elige el contenido y obtiene al momento la versión estándar y las adaptadas del mismo objetivo, con solucionario. Gratis y sin guardar datos del alumnado.</p>
+      <a class="go" href="https://fichasadaptadas.com/">Visitar fichasadaptadas.com →</a>
+    </article>
+    <article class="proj" id="oposiciones">
+      <span class="kind">App para Android</span>
+      <h2>Test Oposiciones</h2>
+      <p>Tests para preparar oposiciones de la Administración General del Estado, Justicia y Fuerzas de Seguridad: miles de preguntas propias basadas en las leyes, simulacros tipo examen y un modo juego para repasar cada día.</p>
+      <span class="badge soon">Próximamente</span>
+    </article>
+  </section>
 
   <footer>
     <span>© 2026 XosoMedia Lab</span>
