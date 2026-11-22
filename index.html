@@ -3,128 +3,242 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>XosoMedia Lab</title>
-<meta name="description" content="XosoMedia Lab: pequeño estudio independiente de apps, juegos y webs útiles: Azulejos del Pueblo, calendariohabil.com, fichasadaptadas.com y Test Oposiciones.">
+<title>XosoMedia Lab · Apps, juegos y webs útiles</title>
+<meta name="description" content="XosoMedia Lab es un pequeño estudio independiente de Manises (Valencia). Hacemos apps, juegos y webs útiles y gratuitos: Azulejos del Pueblo, calendariohabil.com, fichasadaptadas.com, Calendario del Bebé y Oposición Clara.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon-180.png">
 <link rel="canonical" href="https://xosomedialab.github.io/">
+<meta name="theme-color" content="#1d2433">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="XosoMedia Lab">
 <meta property="og:title" content="XosoMedia Lab: apps, juegos y webs útiles">
-<meta property="og:description" content="Pequeño estudio independiente de España: Azulejos del Pueblo, calendariohabil.com, fichasadaptadas.com y Test Oposiciones.">
+<meta property="og:description" content="Pequeño estudio independiente de España: Azulejos del Pueblo, calendariohabil.com, fichasadaptadas.com, Calendario del Bebé y Oposición Clara.">
 <meta property="og:url" content="https://xosomedialab.github.io/">
 <meta property="og:image" content="https://xosomedialab.github.io/azulejos-destacado.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"XosoMedia Lab","url":"https://xosomedialab.github.io/","logo":"https://xosomedialab.github.io/logo-512.png","email":"xosomedialab@gmail.com",
- "sameAs":["https://calendariohabil.com/","https://fichasadaptadas.com/"],
+ "address":{"@type":"PostalAddress","addressLocality":"Manises","addressRegion":"Valencia","addressCountry":"ES"},
+ "sameAs":["https://calendariohabil.com/","https://fichasadaptadas.com/","https://calendariodelbebe.es/","https://oposicionclara.com/","https://ko-fi.com/fichasadaptadas"],
  "owns":[{"@type":"MobileApplication","name":"Azulejos del Pueblo","operatingSystem":"Android","applicationCategory":"GameApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},
          {"@type":"WebSite","name":"Calendario Hábil","url":"https://calendariohabil.com/"},
-         {"@type":"WebSite","name":"Fichas Adaptadas","url":"https://fichasadaptadas.com/"}]}
+         {"@type":"WebSite","name":"Fichas Adaptadas","url":"https://fichasadaptadas.com/"},
+         {"@type":"WebSite","name":"Calendario del Bebé","url":"https://calendariodelbebe.es/"},
+         {"@type":"WebSite","name":"Oposición Clara","url":"https://oposicionclara.com/"}]}
 </script>
 <style>
-  /* Layout: one-page studio site — header, featured game card with art, footer with contact and privacy. */
-  :root { --bg: #FBF8F1; --card: #FFFFFF; --ink: #1D2A44; --soft: #5B6680; --accent: #1E4FB8; --sun: #F2B33D; --line: #E8E1D2; color-scheme: light; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #121826; --card: #1B2335; --ink: #E9EDF6; --soft: #A5AFC6; --accent: #8DB0FF; --sun: #F2B33D; --line: #2C3650; color-scheme: dark; } }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  .wrap { max-width: 900px; margin: 0 auto; padding: 0 16px; }
-  header { padding: 28px 0 8px; display: flex; align-items: center; gap: 12px; }
-  .logo { font: 800 1.5rem/1 Georgia, "Times New Roman", serif; color: var(--accent); letter-spacing: -.01em; }
-  .marca { display:flex; align-items:center; gap:.8rem; }
-  .marca img { width:52px; height:52px; border-radius:12px; flex:none; }
-  .logo small { display: block; font: 700 .7rem/1.4 system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: var(--soft); }
-  .hero { padding: 28px 0 8px; }
-  h1 { font: 800 clamp(1.9rem, 6vw, 2.8rem)/1.1 Georgia, "Times New Roman", serif; margin: 0 0 12px; text-wrap: balance; }
-  .lede { color: var(--soft); max-width: 60ch; margin: 0; }
-  .game { margin: 32px 0; background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
-  .game img.banner { display: block; width: 100%; height: auto; }
-  .gbody { padding: 20px; display: grid; grid-template-columns: 72px 1fr; gap: 16px; align-items: start; }
-  .gbody img { width: 72px; height: 72px; border-radius: 16px; }
-  .gbody h2 { margin: 0 0 6px; font: 800 1.4rem/1.2 Georgia, serif; }
-  .gbody p { margin: 0 0 12px; color: var(--soft); }
-  .badge { display: inline-block; padding: 6px 14px; border-radius: 99px; background: var(--sun); color: #3A2C10; font-weight: 800; font-size: .9rem; }
-  .links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 4px; }
-  a { color: var(--accent); }
-  footer { border-top: 1px solid var(--line); padding: 20px 0 40px; color: var(--soft); font-size: .95rem; display: flex; flex-wrap: wrap; gap: 8px 24px; }
-  .projs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 0 0 40px; }
-  .proj { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 8px; }
-  .proj h2 { margin: 0; font: 800 1.2rem/1.25 Georgia, serif; }
-  .apoya { background: var(--card); border: 2px solid var(--sun); border-radius: 18px; padding: 20px; margin: 0 0 40px; }
-  .apoya h2 { margin: 0 0 6px; font: 800 1.2rem/1.25 Georgia, serif; }
-  .apoya p { margin: 0 0 12px; color: var(--soft); }
-  .apoya ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-  .apoya a { display: inline-block; padding: 10px 18px; border-radius: 999px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; }
-  .apoya a:hover { filter: brightness(1.1); }
-  @media (prefers-color-scheme: dark) { .apoya a { color: #121826; } }
-  .proj p { margin: 0; color: var(--soft); flex: 1; }
-  .kind { font: 700 .72rem/1.4 system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
-  .badge.soon { background: var(--line); color: var(--ink); align-self: flex-start; }
-  .go { font-weight: 700; text-decoration: none; }
-  .go:hover { text-decoration: underline; }
-  @media (max-width: 480px) { .gbody { grid-template-columns: 1fr; } }
+  /* Web del estudio: cabecera con navegación, portada con el motivo de azulejos, proyectos, servicios, apoyo y contacto. */
+  :root { --bg:#F7F5F0; --card:#FFFFFF; --ink:#1D2433; --soft:#5A6378; --line:#E6E1D6;
+          --verde:#2F8F6F; --ambar:#E0A526; --azul:#3A7BD5; --coral:#E06A5A; --accent:#2B5FB0; color-scheme:light; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#141A26; --card:#1D2433; --ink:#ECEFF5; --soft:#A7B0C4; --line:#2E3850; --accent:#8DB0FF; color-scheme:dark; } }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  a { color:var(--accent); }
+  .wrap { max-width:1040px; margin:0 auto; padding:0 20px; }
+
+  /* Cabecera */
+  .top { position:sticky; top:0; z-index:5; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  .top .wrap { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:12px; padding-bottom:12px; }
+  .marca { display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink); }
+  .marca img { width:42px; height:42px; border-radius:10px; }
+  .marca b { font-size:1.2rem; letter-spacing:-.01em; }
+  .marca b span { font-weight:400; }
+  nav { display:flex; gap:4px 18px; flex-wrap:wrap; font-weight:600; font-size:.95rem; }
+  nav a { color:var(--soft); text-decoration:none; }
+  nav a:hover { color:var(--ink); }
+  @media (max-width:640px) { nav { display:none; } }
+
+  /* Portada */
+  .hero { display:grid; grid-template-columns:1.3fr 1fr; gap:32px; align-items:center; padding:56px 0 40px; }
+  .eyebrow { font:700 .78rem/1.4 system-ui,sans-serif; letter-spacing:.16em; text-transform:uppercase; color:var(--soft); margin:0 0 10px; }
+  h1 { font:800 clamp(2rem,5.4vw,3.2rem)/1.08 system-ui,sans-serif; letter-spacing:-.02em; margin:0 0 16px; text-wrap:balance; }
+  .lede { color:var(--soft); font-size:1.1rem; max-width:52ch; margin:0 0 24px; }
+  .cta { display:flex; flex-wrap:wrap; gap:12px; }
+  .btn { display:inline-block; padding:12px 20px; border-radius:999px; font-weight:700; text-decoration:none; }
+  .btn.main { background:var(--ink); color:var(--bg); }
+  .btn.alt { border:2px solid var(--line); color:var(--ink); }
+  .tiles { justify-self:center; width:min(300px,70vw); aspect-ratio:1; display:grid; place-items:center; }
+  .tiles svg { width:100%; height:100%; }
+  @media (max-width:760px) { .hero { grid-template-columns:1fr; padding-top:36px; } .tiles { order:-1; width:160px; } }
+
+  .datos { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:0 0 56px; }
+  .dato { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
+  .dato b { display:block; font-size:1.6rem; line-height:1.1; }
+  .dato span { color:var(--soft); font-size:.92rem; }
+
+  /* Secciones */
+  section { margin:0 0 64px; scroll-margin-top:80px; }
+  h2 { font:800 clamp(1.5rem,3.4vw,2rem)/1.15 system-ui,sans-serif; letter-spacing:-.015em; margin:0 0 8px; }
+  .intro { color:var(--soft); margin:0 0 24px; max-width:62ch; }
+
+  /* Proyectos */
+  .destacado { background:var(--card); border:1px solid var(--line); border-radius:20px; overflow:hidden; margin:0 0 18px; }
+  .destacado img.banner { width:100%; height:auto; display:block; }
+  .destacado .cuerpo { padding:24px; }
+  .projs { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:18px; }
+  .proj { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:22px; display:flex; flex-direction:column; gap:10px; }
+  .cab { display:flex; align-items:center; gap:14px; }
+  .cab img { width:56px; height:56px; border-radius:14px; flex:none; }
+  .cab h3 { margin:0; font-size:1.15rem; line-height:1.2; overflow-wrap:anywhere; }
+  .kind { font:700 .7rem/1.4 system-ui,sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); }
+  .proj p, .destacado p { margin:0; color:var(--soft); flex:1; }
+  .estado { align-self:flex-start; font-size:.8rem; font-weight:700; padding:4px 12px; border-radius:999px; background:var(--line); color:var(--ink); }
+  .estado.ok { background:color-mix(in srgb, var(--verde) 18%, transparent); color:var(--verde); }
+  .estado.pronto { background:color-mix(in srgb, var(--ambar) 25%, transparent); color:#7A5400; }
+  @media (prefers-color-scheme: dark) { .estado.pronto { color:var(--ambar); } }
+  .go { font-weight:700; text-decoration:none; }
+  .go:hover { text-decoration:underline; }
+
+  /* Servicios */
+  .servs { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:18px; }
+  .serv { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:22px; border-top:6px solid var(--c,var(--azul)); display:flex; flex-direction:column; gap:8px; }
+  .serv h3 { margin:0; font-size:1.1rem; }
+  .serv p { margin:0; color:var(--soft); flex:1; }
+  .precio { font-weight:800; }
+
+  /* Apoyo y contacto */
+  .apoya { background:var(--card); border:2px solid var(--ambar); border-radius:20px; padding:24px; }
+  .apoya ul { list-style:none; margin:16px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:10px; }
+  .apoya a { display:inline-block; padding:10px 18px; border-radius:999px; background:var(--accent); color:#fff; text-decoration:none; font-weight:700; }
+  @media (prefers-color-scheme: dark) { .apoya a { color:#141A26; } }
+  .contacto { background:var(--ink); color:var(--bg); border-radius:20px; padding:32px; display:flex; flex-wrap:wrap; gap:16px 32px; align-items:center; justify-content:space-between; }
+  .contacto h2 { color:inherit; }
+  .contacto p { margin:0; opacity:.85; max-width:52ch; }
+  .contacto a.btn { background:var(--bg); color:var(--ink); }
+  footer { border-top:1px solid var(--line); padding:24px 0 48px; color:var(--soft); font-size:.92rem; display:flex; flex-wrap:wrap; gap:8px 24px; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header><div class="marca"><img src="logo.svg" alt="" width="52" height="52"><div class="logo">XosoMedia Lab<small>Apps, juegos y webs</small></div></div></header>
+<header class="top">
+  <div class="wrap">
+    <a class="marca" href="#"><img src="logo.svg" alt="" width="42" height="42"><b>XosoMedia <span>Lab</span></b></a>
+    <nav aria-label="Secciones"><a href="#proyectos">Proyectos</a><a href="#servicios">Servicios</a><a href="#apoya">Apóyanos</a><a href="#contacto">Contacto</a></nav>
+  </div>
+</header>
 
-  <section class="hero">
-    <h1>Apps, juegos y webs útiles, hechos con cariño</h1>
-    <p class="lede">XosoMedia Lab es un pequeño estudio independiente de España. Hacemos juegos, aplicaciones y webs sencillos, cuidados y que se pueden usar sin pagar.</p>
-  </section>
-
-  <article class="game" id="azulejos">
-    <img class="banner" src="azulejos-destacado.jpg" alt="Azulejos del Pueblo: un pueblo mediterráneo restaurado junto al mar y un azulejo azul con una flor" width="1024" height="500">
-    <div class="gbody">
-      <img src="azulejos-icono.png" alt="" width="72" height="72">
-      <div>
-        <h2>Azulejos del Pueblo</h2>
-        <p>Ordena azulejos de estilo artesanal hasta que cada estante tenga un solo dibujo y usa las monedas para restaurar pueblos del Mediterráneo: España, Italia, Grecia y Turquía. Disponible en 13 idiomas.</p>
-        <span class="badge">Próximamente en Google Play</span>
-        <div class="links"><a href="politica-privacidad.html">Política de privacidad</a></div>
-      </div>
+<main class="wrap">
+  <section class="hero" aria-labelledby="titulo">
+    <div>
+      <p class="eyebrow">Estudio independiente · Manises (Valencia)</p>
+      <h1 id="titulo">Apps, juegos y webs útiles, hechos con cariño</h1>
+      <p class="lede">Hacemos herramientas sencillas que resuelven cosas del día a día: fechas y plazos, fichas para el aula, el calendario de tu bebé, tests de oposiciones y un juego inspirado en la cerámica mediterránea. Gratis y sin registro.</p>
+      <div class="cta"><a class="btn main" href="#proyectos">Ver proyectos</a><a class="btn alt" href="#servicios">Servicios para empresas y centros</a></div>
     </div>
-  </article>
-
-  <section class="projs" aria-label="Otros proyectos">
-    <article class="proj" id="calendariohabil">
-      <span class="kind">Web</span>
-      <h2>calendariohabil.com</h2>
-      <p>Festivos nacionales, autonómicos y locales de más de 4.000 municipios, días hábiles, plazos y calendarios escolares de España, con calculadoras laborales de México, Colombia y Perú. Cada fecha, con su boletín oficial.</p>
-      <a class="go" href="https://calendariohabil.com/">Visitar calendariohabil.com →</a>
-    </article>
-    <article class="proj" id="fichasadaptadas">
-      <span class="kind">Web para docentes</span>
-      <h2>fichasadaptadas.com</h2>
-      <p>Generador de fichas imprimibles para Infantil y Primaria: el docente elige el contenido y obtiene al momento la versión estándar y las adaptadas (dislexia, TEA, TDAH…) del mismo objetivo, con solucionario. Gratis y sin guardar datos del alumnado.</p>
-      <a class="go" href="https://fichasadaptadas.com/">Visitar fichasadaptadas.com →</a>
-    </article>
-    <article class="proj" id="oposiciones">
-      <span class="kind">App para Android</span>
-      <h2>Test Oposiciones</h2>
-      <p>Tests para preparar oposiciones de la Administración General del Estado, Justicia y Fuerzas de Seguridad: miles de preguntas propias basadas en las leyes, simulacros tipo examen y un modo juego para repasar cada día.</p>
-      <span class="badge soon">Próximamente</span>
-    </article>
+    <div class="tiles" aria-hidden="true">
+      <svg viewBox="0 0 120 120"><g transform="translate(60 60) rotate(45)"><rect x="-38" y="-38" width="34" height="34" rx="6" fill="#2f8f6f"/><rect x="4" y="-38" width="34" height="34" rx="6" fill="#e0a526"/><rect x="-38" y="4" width="34" height="34" rx="6" fill="#3a7bd5"/><rect x="4" y="4" width="34" height="34" rx="6" fill="#e06a5a"/></g></svg>
+    </div>
   </section>
 
-  <section class="apoya" id="apoya" aria-labelledby="apoya-t">
-    <h2 id="apoya-t">Apoya nuestros proyectos</h2>
-    <p>Todo lo que hacemos es gratis. Si algún proyecto te ha servido, puedes apoyarlo en Ko-fi.</p>
-    <ul>
-      <li><a href="https://ko-fi.com/fichasadaptadas" rel="noopener">fichasadaptadas.com en Ko-fi</a></li>
-      <li><a href="https://ko-fi.com/calendariodelbebe" rel="noopener">Calendario del Bebé en Ko-fi</a></li>
-      <li><a href="https://ko-fi.com/calendariohabil" rel="noopener">calendariohabil.com en Ko-fi</a></li>
-      <li><a href="https://ko-fi.com/oposicionclara" rel="noopener">Oposición Clara en Ko-fi</a></li>
-    </ul>
+  <div class="datos" aria-label="El estudio en cifras">
+    <div class="dato"><b>5</b><span>proyectos propios</span></div>
+    <div class="dato"><b>4.600+</b><span>municipios con sus festivos</span></div>
+    <div class="dato"><b>13</b><span>idiomas en el juego</span></div>
+    <div class="dato"><b>0 €</b><span>para usarlos, sin registro</span></div>
+  </div>
+
+  <section id="proyectos" aria-labelledby="proyectos-t">
+    <h2 id="proyectos-t">Proyectos</h2>
+    <p class="intro">Cada proyecto tiene su propia web o app. Todos usan fuentes oficiales y se pueden usar gratis.</p>
+
+    <article class="destacado" id="azulejos">
+      <img class="banner" src="azulejos-destacado.jpg" alt="Azulejos del Pueblo: un pueblo mediterráneo restaurado junto al mar y un azulejo azul con una flor" width="1024" height="500">
+      <div class="cuerpo">
+        <div class="cab"><img src="img/azulejos.png" alt="" width="56" height="56"><div><span class="kind">Juego para Android</span><h3>Azulejos del Pueblo</h3></div></div>
+        <p style="margin:12px 0">Ordena azulejos de estilo artesanal hasta que cada estante tenga un solo dibujo y usa las monedas para restaurar pueblos del Mediterráneo: España, Italia, Grecia y Turquía. El primero, inspirado en la cerámica de Manises. En 13 idiomas.</p>
+        <span class="estado pronto">Muy pronto en Google Play</span>
+        <p style="margin-top:12px"><a href="politica-privacidad.html">Política de privacidad</a></p>
+      </div>
+    </article>
+
+    <div class="projs">
+      <article class="proj" id="calendariohabil">
+        <div class="cab"><img src="img/calendariohabil.svg" alt="" width="56" height="56"><div><span class="kind">Web</span><h3>calendariohabil.com</h3></div></div>
+        <p>Festivos nacionales, autonómicos y locales de más de 4.600 municipios, días hábiles, plazos, calendarios escolares y calculadoras laborales. Cada fecha, con su boletín oficial.</p>
+        <a class="go" href="https://calendariohabil.com/">Visitar calendariohabil.com →</a>
+      </article>
+      <article class="proj" id="fichasadaptadas">
+        <div class="cab"><img src="img/fichasadaptadas.png" alt="" width="56" height="56"><div><span class="kind">Web para docentes</span><h3>fichasadaptadas.com</h3></div></div>
+        <p>Fichas imprimibles de Infantil y Primaria para toda la clase y, a la vez, sus versiones adaptadas (TEA, dislexia, TDAH, TEL, baja visión, altas capacidades), con solucionario y en las lenguas cooficiales.</p>
+        <a class="go" href="https://fichasadaptadas.com/">Visitar fichasadaptadas.com →</a>
+      </article>
+      <article class="proj" id="calendariodelbebe">
+        <div class="cab"><img src="img/calendariodelbebe.svg" alt="" width="56" height="56"><div><span class="kind">Web para familias</span><h3>Calendario del Bebé</h3></div></div>
+        <p>Escribe la fecha de nacimiento o la fecha probable de parto y ve las pruebas del embarazo, las vacunas, las revisiones del pediatra y las ayudas de tu comunidad, con fechas y fuentes oficiales.</p>
+        <a class="go" href="https://calendariodelbebe.es/">Visitar calendariodelbebe.es →</a>
+      </article>
+      <article class="proj" id="oposicionclara">
+        <div class="cab"><img src="img/oposicionclara.svg" alt="" width="56" height="56"><div><span class="kind">Web y apps</span><h3>Oposición Clara</h3></div></div>
+        <p>Tests de oposiciones con el artículo de la ley y su explicación, simulacros tipo examen y guías: Auxiliar Administrativo del Estado y Administrativo del Estado. Las apps para Android, en pruebas.</p>
+        <a class="go" href="https://oposicionclara.com/">Visitar oposicionclara.com →</a>
+      </article>
+    </div>
   </section>
 
-  <footer>
-    <span>© 2026 XosoMedia Lab</span>
-    <span>Contacto: xosomedialab@gmail.com</span>
-    <a href="politica-privacidad.html">Política de privacidad / Privacy policy</a>
-  </footer>
-</div>
+  <section id="servicios" aria-labelledby="servicios-t">
+    <h2 id="servicios-t">Servicios</h2>
+    <p class="intro">Lo que hemos construido para nuestros proyectos también lo ponemos al servicio de empresas, centros educativos y entidades.</p>
+    <div class="servs">
+      <article class="serv" style="--c:var(--coral)">
+        <span class="kind">Empresas y gestorías</span>
+        <h3>Calendario laboral 2027 con tu logo</h3>
+        <p>Un PDF para imprimir con los festivos de tu municipio, tu logo y tus colores. Para la oficina o para mandarlo a tus clientes.</p>
+        <span class="precio">Desde 15 €</span>
+        <a class="go" href="https://calendariohabil.com/es/calendario-laboral-empresa/">Ver ejemplos y pedirlo →</a>
+      </article>
+      <article class="serv" style="--c:var(--verde)">
+        <span class="kind">Colegios y equipos de orientación</span>
+        <h3>Fichas a medida y licencias de centro</h3>
+        <p>Fichas con el logo del centro, adaptadas a vuestra programación o a un alumno concreto, y licencias para todo el claustro.</p>
+        <span class="precio">Pide presupuesto</span>
+        <a class="go" href="mailto:xosomedialab@gmail.com?subject=Fichas%20a%20medida">Escríbenos →</a>
+      </article>
+      <article class="serv" style="--c:var(--azul)">
+        <span class="kind">Ayuntamientos, museos y turismo</span>
+        <h3>Juegos y apps de patrimonio</h3>
+        <p>Un juego o una app sobre la cerámica, la historia o las fiestas de tu pueblo, como hicimos con Azulejos del Pueblo y la cerámica de Manises.</p>
+        <span class="precio">Pide presupuesto</span>
+        <a class="go" href="mailto:xosomedialab@gmail.com?subject=Juego%20de%20patrimonio">Escríbenos →</a>
+      </article>
+      <article class="serv" style="--c:var(--ambar)">
+        <span class="kind">Comercios y negocios</span>
+        <h3>Webs sencillas y rápidas</h3>
+        <p>Una web que carga rápido y aparece en Google, con tu ficha de Google Maps y su mantenimiento, en castellano y valenciano.</p>
+        <span class="precio">Disponible en 2027</span>
+        <a class="go" href="mailto:xosomedialab@gmail.com?subject=Web%20para%20mi%20negocio">Avísame cuando esté →</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="apoya" aria-labelledby="apoya-t">
+    <div class="apoya">
+      <h2 id="apoya-t">Apoya nuestros proyectos</h2>
+      <p class="intro" style="margin:0">Todo lo que hacemos es gratis. Si algún proyecto te ha servido, puedes invitarnos a un café en Ko-fi.</p>
+      <ul>
+        <li><a href="https://ko-fi.com/fichasadaptadas" rel="noopener">fichasadaptadas.com</a></li>
+        <li><a href="https://ko-fi.com/calendariohabil" rel="noopener">calendariohabil.com</a></li>
+        <li><a href="https://ko-fi.com/calendariodelbebe" rel="noopener">Calendario del Bebé</a></li>
+        <li><a href="https://ko-fi.com/oposicionclara" rel="noopener">Oposición Clara</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contacto" aria-labelledby="contacto-t">
+    <div class="contacto">
+      <div>
+        <h2 id="contacto-t">¿Hablamos?</h2>
+        <p>Para colaboraciones, prensa, encargos o sugerencias sobre cualquiera de los proyectos, escríbenos. Respondemos en uno o dos días laborables.</p>
+      </div>
+      <a class="btn" href="mailto:xosomedialab@gmail.com">xosomedialab@gmail.com</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© 2026 XosoMedia Lab · Manises (Valencia)</span>
+  <a href="politica-privacidad.html">Privacidad de Azulejos del Pueblo</a>
+  <a href="privacidad-test-oposiciones.html">Privacidad de las apps de Oposición Clara</a>
+</footer>
 </body>
 </html>
