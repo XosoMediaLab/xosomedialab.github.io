@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>XosoMedia Lab</title>
 <meta name="description" content="XosoMedia Lab: pequeño estudio independiente de apps, juegos y webs útiles: Azulejos del Pueblo, calendariohabil.com, fichasadaptadas.com y Test Oposiciones.">
-<link rel="icon" href="azulejos-icono.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon-180.png">
 <link rel="canonical" href="https://xosomedialab.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="XosoMedia Lab">
@@ -15,7 +17,7 @@
 <meta property="og:image" content="https://xosomedialab.github.io/azulejos-destacado.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"XosoMedia Lab","url":"https://xosomedialab.github.io/","logo":"https://xosomedialab.github.io/azulejos-icono.png","email":"xosomedialab@gmail.com",
+{"@context":"https://schema.org","@type":"Organization","name":"XosoMedia Lab","url":"https://xosomedialab.github.io/","logo":"https://xosomedialab.github.io/logo-512.png","email":"xosomedialab@gmail.com",
  "sameAs":["https://calendariohabil.com/","https://fichasadaptadas.com/"],
  "owns":[{"@type":"MobileApplication","name":"Azulejos del Pueblo","operatingSystem":"Android","applicationCategory":"GameApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},
          {"@type":"WebSite","name":"Calendario Hábil","url":"https://calendariohabil.com/"},
@@ -30,6 +32,8 @@
   .wrap { max-width: 900px; margin: 0 auto; padding: 0 16px; }
   header { padding: 28px 0 8px; display: flex; align-items: center; gap: 12px; }
   .logo { font: 800 1.5rem/1 Georgia, "Times New Roman", serif; color: var(--accent); letter-spacing: -.01em; }
+  .marca { display:flex; align-items:center; gap:.8rem; }
+  .marca img { width:52px; height:52px; border-radius:12px; flex:none; }
   .logo small { display: block; font: 700 .7rem/1.4 system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: var(--soft); }
   .hero { padding: 28px 0 8px; }
   h1 { font: 800 clamp(1.9rem, 6vw, 2.8rem)/1.1 Georgia, "Times New Roman", serif; margin: 0 0 12px; text-wrap: balance; }
@@ -64,7 +68,7 @@
 </head>
 <body>
 <div class="wrap">
-  <header><div class="logo">XosoMedia Lab<small>Apps, juegos y webs</small></div></header>
+  <header><div class="marca"><img src="logo.svg" alt="" width="52" height="52"><div class="logo">XosoMedia Lab<small>Apps, juegos y webs</small></div></div></header>
 
   <section class="hero">
     <h1>Apps, juegos y webs útiles, hechos con cariño</h1>
