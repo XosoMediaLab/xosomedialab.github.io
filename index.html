@@ -65,7 +65,7 @@
 
   .datos { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:0 0 56px; }
   .dato { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
-  .dato b { display:block; font-size:1.6rem; line-height:1.1; }
+  .dato b { display:block; font-size:1.05rem; line-height:1.25; margin-bottom:4px; }
   .dato span { color:var(--soft); font-size:.92rem; }
 
   /* Secciones */
@@ -74,10 +74,11 @@
   .intro { color:var(--soft); margin:0 0 24px; max-width:62ch; }
 
   /* Proyectos */
-  .destacado { background:var(--card); border:1px solid var(--line); border-radius:20px; overflow:hidden; margin:0 0 18px; }
-  .destacado img.banner { width:100%; height:auto; display:block; }
-  .destacado .cuerpo { padding:24px; }
-  .projs { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:18px; }
+  .projs { display:grid; grid-template-columns:repeat(6,1fr); gap:18px; }
+  .projs .proj { grid-column:span 2; }
+  .projs .proj:nth-child(n+4) { grid-column:span 3; }
+  @media (max-width:900px) { .projs { grid-template-columns:repeat(2,1fr); } .projs .proj, .projs .proj:nth-child(n+4) { grid-column:span 1; } .projs .proj:last-child { grid-column:span 2; } }
+  @media (max-width:600px) { .projs { grid-template-columns:1fr; } .projs .proj:last-child { grid-column:span 1; } }
   .proj { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:22px; display:flex; flex-direction:column; gap:10px; }
   .cab { display:flex; align-items:center; gap:14px; }
   .cab img { width:56px; height:56px; border-radius:14px; flex:none; }
@@ -88,6 +89,8 @@
   .estado.ok { background:color-mix(in srgb, var(--verde) 18%, transparent); color:var(--verde); }
   .estado.pronto { background:color-mix(in srgb, var(--ambar) 25%, transparent); color:#7A5400; }
   @media (prefers-color-scheme: dark) { .estado.pronto { color:var(--ambar); } }
+  .chips { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px; }
+  .chips li { font-size:.8rem; font-weight:600; padding:3px 10px; border-radius:999px; border:1px solid var(--line); color:var(--soft); }
   .go { font-weight:700; text-decoration:none; }
   .go:hover { text-decoration:underline; }
 
@@ -124,53 +127,54 @@
       <p class="eyebrow">Estudio independiente · Manises (Valencia)</p>
       <h1 id="titulo">Apps, juegos y webs útiles, hechos con cariño</h1>
       <p class="lede">Hacemos herramientas sencillas que resuelven cosas del día a día: fechas y plazos, fichas para el aula, el calendario de tu bebé, tests de oposiciones y un juego inspirado en la cerámica mediterránea. Gratis y sin registro.</p>
-      <div class="cta"><a class="btn main" href="#proyectos">Ver proyectos</a><a class="btn alt" href="#servicios">Servicios para empresas y centros</a></div>
+      <div class="cta"><a class="btn main" href="#proyectos">Ver proyectos</a><a class="btn alt" href="#servicios">Servicios</a></div>
     </div>
     <div class="tiles" aria-hidden="true">
       <svg viewBox="0 0 120 120"><g transform="translate(60 60) rotate(45)"><rect x="-38" y="-38" width="34" height="34" rx="6" fill="#2f8f6f"/><rect x="4" y="-38" width="34" height="34" rx="6" fill="#e0a526"/><rect x="-38" y="4" width="34" height="34" rx="6" fill="#3a7bd5"/><rect x="4" y="4" width="34" height="34" rx="6" fill="#e06a5a"/></g></svg>
     </div>
   </section>
 
-  <div class="datos" aria-label="El estudio en cifras">
-    <div class="dato"><b>5</b><span>proyectos propios</span></div>
-    <div class="dato"><b>4.600+</b><span>municipios con sus festivos</span></div>
-    <div class="dato"><b>13</b><span>idiomas en el juego</span></div>
-    <div class="dato"><b>0 €</b><span>para usarlos, sin registro</span></div>
+  <div class="datos" aria-label="Cómo trabajamos">
+    <div class="dato"><b>Fuentes oficiales</b><span>Cada dato, con su boletín o su norma</span></div>
+    <div class="dato"><b>Para todos</b><span>Versiones adaptadas y lenguas cooficiales</span></div>
+    <div class="dato"><b>Sin registro</b><span>Gratis y sin pedir tus datos</span></div>
+    <div class="dato"><b>Hecho en Manises</b><span>Un estudio pequeño e independiente</span></div>
   </div>
 
   <section id="proyectos" aria-labelledby="proyectos-t">
     <h2 id="proyectos-t">Proyectos</h2>
     <p class="intro">Cada proyecto tiene su propia web o app. Todos usan fuentes oficiales y se pueden usar gratis.</p>
 
-    <article class="destacado" id="azulejos">
-      <img class="banner" src="azulejos-destacado.jpg" alt="Azulejos del Pueblo: un pueblo mediterráneo restaurado junto al mar y un azulejo azul con una flor" width="1024" height="500">
-      <div class="cuerpo">
-        <div class="cab"><img src="img/azulejos.png" alt="" width="56" height="56"><div><span class="kind">Juego para Android</span><h3>Azulejos del Pueblo</h3></div></div>
-        <p style="margin:12px 0">Ordena azulejos de estilo artesanal hasta que cada estante tenga un solo dibujo y usa las monedas para restaurar pueblos del Mediterráneo: España, Italia, Grecia y Turquía. El primero, inspirado en la cerámica de Manises. En 13 idiomas.</p>
-        <span class="estado pronto">Muy pronto en Google Play</span>
-        <p style="margin-top:12px"><a href="politica-privacidad.html">Política de privacidad</a></p>
-      </div>
-    </article>
 
     <div class="projs">
+      <article class="proj" id="azulejos">
+        <div class="cab"><img src="img/azulejos.png" alt="" width="56" height="56"><div><span class="kind">Juego para Android</span><h3>Azulejos del Pueblo</h3></div></div>
+        <p>Ordena azulejos de estilo artesanal y restaura pueblos del Mediterráneo: España, Italia, Grecia y Turquía. El primero, inspirado en la cerámica de Manises.</p>
+        <ul class="chips"><li>13 idiomas</li><li>4 países</li></ul>
+        <span class="estado pronto">Muy pronto en Google Play</span>
+      </article>
       <article class="proj" id="calendariohabil">
         <div class="cab"><img src="img/calendariohabil.svg" alt="" width="56" height="56"><div><span class="kind">Web</span><h3>calendariohabil.com</h3></div></div>
         <p>Festivos nacionales, autonómicos y locales de más de 4.600 municipios, días hábiles, plazos, calendarios escolares y calculadoras laborales. Cada fecha, con su boletín oficial.</p>
+        <ul class="chips"><li>+4.600 municipios</li><li>España y Latinoamérica</li></ul>
         <a class="go" href="https://calendariohabil.com/">Visitar calendariohabil.com →</a>
       </article>
       <article class="proj" id="fichasadaptadas">
         <div class="cab"><img src="img/fichasadaptadas.png" alt="" width="56" height="56"><div><span class="kind">Web para docentes</span><h3>fichasadaptadas.com</h3></div></div>
         <p>Fichas imprimibles de Infantil y Primaria para toda la clase y, a la vez, sus versiones adaptadas (TEA, dislexia, TDAH, TEL, baja visión, altas capacidades), con solucionario y en las lenguas cooficiales.</p>
+        <ul class="chips"><li>6 adaptaciones</li><li>5 lenguas</li></ul>
         <a class="go" href="https://fichasadaptadas.com/">Visitar fichasadaptadas.com →</a>
       </article>
       <article class="proj" id="calendariodelbebe">
         <div class="cab"><img src="img/calendariodelbebe.svg" alt="" width="56" height="56"><div><span class="kind">Web para familias</span><h3>Calendario del Bebé</h3></div></div>
         <p>Escribe la fecha de nacimiento o la fecha probable de parto y ve las pruebas del embarazo, las vacunas, las revisiones del pediatra y las ayudas de tu comunidad, con fechas y fuentes oficiales.</p>
+        <ul class="chips"><li>Vacunas por comunidad</li><li>Del embarazo a los 2 años</li></ul>
         <a class="go" href="https://calendariodelbebe.es/">Visitar calendariodelbebe.es →</a>
       </article>
       <article class="proj" id="oposicionclara">
         <div class="cab"><img src="img/oposicionclara.svg" alt="" width="56" height="56"><div><span class="kind">Web y apps</span><h3>Oposición Clara</h3></div></div>
         <p>Tests de oposiciones con el artículo de la ley y su explicación, simulacros tipo examen y guías: Auxiliar Administrativo del Estado y Administrativo del Estado. Las apps para Android, en pruebas.</p>
+        <ul class="chips"><li>Tests con su artículo</li><li>Web y Android</li></ul>
         <a class="go" href="https://oposicionclara.com/">Visitar oposicionclara.com →</a>
       </article>
     </div>
@@ -202,11 +206,11 @@
         <a class="go" href="mailto:xosomedialab@gmail.com?subject=Juego%20de%20patrimonio">Escríbenos →</a>
       </article>
       <article class="serv" style="--c:var(--ambar)">
-        <span class="kind">Comercios y negocios</span>
-        <h3>Webs sencillas y rápidas</h3>
-        <p>Una web que carga rápido y aparece en Google, con tu ficha de Google Maps y su mantenimiento, en castellano y valenciano.</p>
-        <span class="precio">Disponible en 2027</span>
-        <a class="go" href="mailto:xosomedialab@gmail.com?subject=Web%20para%20mi%20negocio">Avísame cuando esté →</a>
+        <span class="kind">Negocios y entidades</span>
+        <h3>Webs profesionales que se encuentran en Google</h3>
+        <p>Diseño a medida, posicionamiento en Google y en Google Maps, en castellano y valenciano, y mantenimiento incluido. Con el mismo cuidado y la misma tecnología que usamos en nuestros propios proyectos.</p>
+        <span class="precio">A partir de 2027</span>
+        <a class="go" href="mailto:xosomedialab@gmail.com?subject=Web%20para%20mi%20negocio">Cuéntanos tu proyecto →</a>
       </article>
     </div>
   </section>
