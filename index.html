@@ -94,6 +94,16 @@
   .go { font-weight:700; text-decoration:none; }
   .go:hover { text-decoration:underline; }
 
+  /* Tienda */
+  .tienda { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr)); gap:18px; }
+  .prod { background:var(--card); border:1px solid var(--line); border-radius:20px; overflow:hidden; display:flex; flex-direction:column; }
+  .prod > img, .prod > .vis { width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; display:block; background:var(--line); }
+  .prod > .vis { display:flex; align-items:center; justify-content:center; background:#DCEBE3; }
+  .prod > .vis img { width:45%; height:auto; border-radius:22%; }
+  .prod div.tx { padding:18px 20px 22px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .prod h3 { margin:0; font-size:1.1rem; line-height:1.25; }
+  .prod p { margin:0; color:var(--soft); flex:1; }
+
   /* Servicios */
   .servs { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:18px; }
   .serv { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:22px; border-top:6px solid var(--c,var(--azul)); display:flex; flex-direction:column; gap:8px; }
@@ -117,7 +127,7 @@
 <header class="top">
   <div class="wrap">
     <a class="marca" href="#"><img src="logo.svg" alt="" width="42" height="42"><b>XosoMedia <span>Lab</span></b></a>
-    <nav aria-label="Secciones"><a href="#proyectos">Proyectos</a><a href="#servicios">Servicios</a><a href="#apoya">Apóyanos</a><a href="#contacto">Contacto</a></nav>
+    <nav aria-label="Secciones"><a href="#proyectos">Proyectos</a><a href="#tienda">Tienda</a><a href="#servicios">Servicios</a><a href="#apoya">Apóyanos</a><a href="#contacto">Contacto</a></nav>
   </div>
 </header>
 
@@ -127,7 +137,7 @@
       <p class="eyebrow">Estudio independiente · Manises (Valencia)</p>
       <h1 id="titulo">Apps, juegos y webs útiles, hechos con cariño</h1>
       <p class="lede">Diseñamos y desarrollamos webs, apps y juegos que resuelven problemas reales, desde la idea hasta su publicación y su mantenimiento. Algunos ejemplos son nuestros propios proyectos: fechas y plazos laborales, fichas adaptadas para el aula, el calendario de tu bebé, tests de oposiciones y un juego inspirado en la cerámica mediterránea. Y podemos hacer mucho más.</p>
-      <div class="cta"><a class="btn main" href="#proyectos">Ver proyectos</a><a class="btn alt" href="#servicios">Servicios</a></div>
+      <div class="cta"><a class="btn main" href="#proyectos">Ver proyectos</a><a class="btn alt" href="#tienda">Tienda</a><a class="btn alt" href="#servicios">Servicios</a></div>
     </div>
     <div class="tiles" aria-hidden="true">
       <svg viewBox="0 0 120 120"><g transform="translate(60 60) rotate(45)"><rect x="-38" y="-38" width="34" height="34" rx="6" fill="#2f8f6f"/><rect x="4" y="-38" width="34" height="34" rx="6" fill="#e0a526"/><rect x="-38" y="4" width="34" height="34" rx="6" fill="#3a7bd5"/><rect x="4" y="4" width="34" height="34" rx="6" fill="#e06a5a"/></g></svg>
@@ -143,7 +153,7 @@
 
   <section id="proyectos" aria-labelledby="proyectos-t">
     <h2 id="proyectos-t">Proyectos</h2>
-    <p class="intro">Cada proyecto tiene su propia web o app. Todos usan fuentes oficiales y se pueden usar gratis.</p>
+    <p class="intro">Cada proyecto tiene su propia web o app. Todos se pueden usar gratis.</p>
 
 
     <div class="projs">
@@ -180,21 +190,61 @@
     </div>
   </section>
 
+  <section id="tienda" aria-labelledby="tienda-t">
+    <h2 id="tienda-t">Tienda</h2>
+    <p class="intro">Lo que hemos preparado para ahorrarte trabajo o para guardar un recuerdo. Las webs siguen siendo gratis.</p>
+    <div class="tienda">
+      <article class="prod">
+        <img src="img/tienda-calendario.jpg" alt="Ejemplo de calendario laboral 2027 con el logo de una empresa" width="800" height="600" loading="lazy">
+        <div class="tx">
+        <span class="kind">Empresas y gestorías</span>
+        <h3>Calendario laboral 2027 con tu logo</h3>
+        <p>Los festivos de tu municipio, tu logo, tus colores y tus días de cierre. En PDF, listo para imprimir y colgar.</p>
+        <span class="precio">Desde 15 €</span>
+        <a class="go" href="https://calendariohabil.com/es/calendario-laboral-empresa/">Ver ejemplos y pedirlo →</a>
+        </div>
+      </article>
+      <article class="prod">
+        <img src="img/tienda-album.jpg" alt="Portada y páginas del álbum Mi primer año" width="800" height="600" loading="lazy">
+        <div class="tx">
+        <span class="kind">Familias</span>
+        <h3>Mi primer año: álbum ilustrado + 16 tarjetas</h3>
+        <p>Álbum de 34 páginas para imprimir, con los datos de tu comunidad, y tarjetas para las fotos de cada mes.</p>
+        <span class="precio">Desde 4,90 €</span>
+        <a class="go" href="https://ko-fi.com/s/7de0f44895">Ver el álbum →</a>
+        </div>
+      </article>
+      <article class="prod">
+        <div class="vis"><img src="img/fichasadaptadas.png" alt="" width="96" height="96"></div>
+        <div class="tx">
+        <span class="kind">Docentes</span>
+        <h3>Packs de fichas: dislexia, TEA y TDAH</h3>
+        <p>Fichas de 1.º de Primaria ya seleccionadas, con guía y registro de seguimiento. Las fichas sueltas son gratis.</p>
+        <span class="precio">Desde 4 €</span>
+        <a class="go" href="https://fichasadaptadas.com/packs-pro">Ver los packs →</a>
+        </div>
+      </article>
+      <article class="prod">
+        <div class="vis"><img src="img/fichasadaptadas.png" alt="" width="96" height="96"></div>
+        <div class="tx">
+        <span class="kind">Colegios</span>
+        <h3>Licencia de centro de fichasadaptadas</h3>
+        <p>Para todo el claustro, con una sola factura a nombre del centro.</p>
+        <span class="precio">Desde 149 € al año</span>
+        <a class="go" href="https://fichasadaptadas.com/centros/licencia">Ver la licencia →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <section id="servicios" aria-labelledby="servicios-t">
     <h2 id="servicios-t">Servicios</h2>
     <p class="intro">Lo que hemos construido para nuestros proyectos también lo ponemos al servicio de empresas, centros educativos y entidades.</p>
     <div class="servs">
-      <article class="serv" style="--c:var(--coral)">
-        <span class="kind">Empresas y gestorías</span>
-        <h3>Calendario laboral 2027 con tu logo</h3>
-        <p>Un PDF para imprimir con los festivos de tu municipio, tu logo y tus colores. Para la oficina o para mandarlo a tus clientes.</p>
-        <span class="precio">Desde 15 €</span>
-        <a class="go" href="https://calendariohabil.com/es/calendario-laboral-empresa/">Ver ejemplos y pedirlo →</a>
-      </article>
       <article class="serv" style="--c:var(--verde)">
         <span class="kind">Colegios y equipos de orientación</span>
-        <h3>Fichas a medida y licencias de centro</h3>
-        <p>Fichas con el logo del centro, adaptadas a vuestra programación o a un alumno concreto, y licencias para todo el claustro.</p>
+        <h3>Fichas a medida para tu centro</h3>
+        <p>Fichas con el logo del centro, adaptadas a vuestra programación o a una necesidad concreta.</p>
         <span class="precio">Pide presupuesto</span>
         <a class="go" href="mailto:hola@xosomedialab.com?subject=Fichas%20a%20medida">Escríbenos →</a>
       </article>
@@ -218,7 +268,7 @@
   <section id="apoya" aria-labelledby="apoya-t">
     <div class="apoya">
       <h2 id="apoya-t">Apoya nuestros proyectos</h2>
-      <p class="intro" style="margin:0">Todo lo que hacemos es gratis. Si algún proyecto te ha servido, puedes invitarnos a un café en Ko-fi.</p>
+      <p class="intro" style="margin:0">Nuestras webs se usan gratis y sin registro. Si algún proyecto te ha servido, puedes invitarnos a un café en Ko-fi.</p>
       <ul>
         <li><a href="https://ko-fi.com/fichasadaptadas" rel="noopener">fichasadaptadas.com</a></li>
         <li><a href="https://ko-fi.com/calendariohabil" rel="noopener">calendariohabil.com</a></li>
