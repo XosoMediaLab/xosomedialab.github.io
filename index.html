@@ -107,6 +107,7 @@
   /* Servicios */
   .servs { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:18px; }
   .serv { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:22px; border-top:6px solid var(--c,var(--azul)); display:flex; flex-direction:column; gap:8px; }
+  .serv:last-child:nth-child(odd) { grid-column:1/-1; }
   .serv h3 { margin:0; font-size:1.1rem; }
   .serv p { margin:0; color:var(--soft); flex:1; }
   .precio { font-weight:800; }
@@ -254,6 +255,13 @@
         <p>Un juego o una app sobre la cerámica, la historia o las fiestas de tu pueblo, como hicimos con Azulejos del Pueblo y la cerámica de Manises.</p>
         <span class="precio">Pide presupuesto</span>
         <a class="go" href="mailto:hola@xosomedialab.com?subject=Juego%20de%20patrimonio">Escríbenos →</a>
+      </article>
+      <article class="serv" style="--c:var(--verde)">
+        <span class="kind">Pymes y talleres</span>
+        <h3>Tu Excel, en automático</h3>
+        <p>Hojas que se actualizan solas: unen tus datos, revisan errores, calculan y generan el informe del mes. Con criterio de ingeniería y de gestión, y precio cerrado.</p>
+        <span class="precio">Desde 490 €</span>
+        <a class="go" href="mailto:hola@xosomedialab.com?subject=Automatizar%20mi%20Excel">Cuéntanos qué haces a mano →</a>
       </article>
       <article class="serv" style="--c:var(--ambar)">
         <span class="kind">Negocios y entidades</span>
