@@ -65,7 +65,17 @@
   .btn.alt { border:2px solid var(--line); color:var(--ink); }
   .tiles { justify-self:center; width:min(300px,70vw); aspect-ratio:1; display:grid; place-items:center; }
   .tiles svg { width:100%; height:100%; }
-  @media (max-width:760px) { .hero { grid-template-columns:1fr; padding-top:36px; } .tiles { order:-1; width:160px; } }
+  @media (max-width:760px) {
+    .hero { grid-template-columns:1fr; padding:24px 0 8px; gap:0; }
+    .tiles { display:none; } /* el logo ya está en la cabecera */
+    .lede { font-size:1rem; margin-bottom:18px; }
+    .cta { gap:8px; } .btn { padding:10px 16px; font-size:.95rem; }
+    /* En el móvil, los proyectos van justo después de la portada y «Cómo trabajamos» después */
+    main.wrap { display:flex; flex-direction:column; } main.wrap > * { min-width:0; width:100%; }
+    main.wrap > .hero { order:-2; margin-bottom:32px; } main.wrap > #proyectos { order:-1; }
+    .datos { grid-template-columns:1fr 1fr; gap:8px; margin-bottom:48px; }
+    .dato { padding:12px 14px; } .dato b { font-size:.98rem; } .dato span { font-size:.85rem; }
+  }
 
   .datos { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:0 0 56px; }
   .dato { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
@@ -140,7 +150,7 @@
   <section class="hero" aria-labelledby="titulo">
     <div>
       <p class="eyebrow">Estudio independiente · Manises (Valencia)</p>
-      <h1 id="titulo">Apps, juegos y webs útiles, hechos con cariño</h1>
+      <h1 id="titulo">Apps, juegos, webs y herramientas útiles, hechos con cariño</h1>
       <p class="lede">Diseñamos y desarrollamos webs, apps, juegos y software a medida que resuelven problemas reales, desde la idea hasta su publicación y su mantenimiento. Algunos ejemplos son nuestros propios proyectos: fechas y plazos laborales, fichas adaptadas para el aula, el calendario de tu bebé, tests de oposiciones y un juego inspirado en la cerámica mediterránea. Y podemos hacer mucho más.</p>
       <div class="cta"><a class="btn main" href="#proyectos">Ver proyectos</a><a class="btn alt" href="#tienda">Tienda</a><a class="btn alt" href="#servicios">Servicios</a></div>
     </div>
